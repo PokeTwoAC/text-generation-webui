@@ -235,26 +235,26 @@ def install_webui():
         choice = os.environ["GPU_CHOICE"].upper()
         print_big_message(f"Selected GPU choice \"{choice}\" based on the GPU_CHOICE environment variable.")
     else:
-        choice = get_user_choice(
-            "What is your GPU?",
-            {
-                'A': 'NVIDIA',
-                'B': 'AMD (Linux/MacOS only. Requires ROCm SDK 5.6 on Linux)',
-                'C': 'Apple M Series',
-                'D': 'Intel Arc (IPEX)',
-                'N': 'None (I want to run models in CPU mode)'
-            },
-        )
+        #choice = get_user_choice(
+            #"What is your GPU?",
+            #{
+                #'A': 'NVIDIA',
+                #'B': 'AMD (Linux/MacOS only. Requires ROCm SDK 5.6 on Linux)',
+                #'C': 'Apple M Series',
+                #'D': 'Intel Arc (IPEX)',
+                #'N': 'None (I want to run models in CPU mode)'
+            #},
+        #)
 
-    gpu_choice_to_name = {
-        "A": "NVIDIA",
-        "B": "AMD",
-        "C": "APPLE",
-        "D": "INTEL",
-        "N": "NONE"
-    }
+    #gpu_choice_to_name = {
+        #"A": "NVIDIA",
+        #"B": "AMD",
+        #"C": "APPLE",
+        #"D": "INTEL",
+        #"N": "NONE"
+    #}
 
-    selected_gpu = gpu_choice_to_name[choice]
+    selected_gpu = "NVIDIA"
     use_cuda118 = "N"
 
     # Write a flag to CMD_FLAGS.txt for CPU mode
