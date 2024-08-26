@@ -273,7 +273,7 @@ def install_webui():
             use_cuda118 = input("Input (Y/N)> ").upper().strip('"\'').strip()
             while use_cuda118 not in 'YN':
                 print("Invalid choice. Please try again.")
-                use_cuda118 = input("Input> ").upper().strip('"\'').strip()
+                use_cuda118 = "Y"
 
         if use_cuda118 == 'Y':
             print("CUDA: 11.8")
