@@ -234,7 +234,7 @@ def install_webui():
     if "GPU_CHOICE" in os.environ:
         choice = os.environ["GPU_CHOICE"].upper()
         print_big_message(f"Selected GPU choice \"{choice}\" based on the GPU_CHOICE environment variable.")
-    else:
+    #else:
         #choice = get_user_choice(
             #"What is your GPU?",
             #{
