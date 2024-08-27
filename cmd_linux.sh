@@ -2,7 +2,10 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-if [[ "$(pwd)" =~ " " ]]; then echo This script relies on Miniconda which can not be silently installed under a path with spaces. && exit; fi
+if [[ "$(pwd)" =~ " " ]]; then 
+    echo "This script relies on Miniconda which can not be silently installed under a path with spaces." 
+    exit
+fi
 
 # deactivate existing conda envs as needed to avoid conflicts
 { conda deactivate && conda deactivate && conda deactivate; } 2> /dev/null
@@ -18,5 +21,5 @@ unset PYTHONHOME
 export CUDA_PATH="$INSTALL_ENV_DIR"
 export CUDA_HOME="$CUDA_PATH"
 
-# activate env
-bash --init-file <(echo "pip install --upgrade tts")
+# activate env, install packages, and exit
+bash --init-file <(echo "source \"$CONDA_ROOT_PREFIX/etc/profile.d/conda.sh\" && conda activate \"$INSTALL_ENV_DIR\" && pip install --upgrade tts && exit")
