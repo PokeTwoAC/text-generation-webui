@@ -19,4 +19,4 @@ export CUDA_PATH="$INSTALL_ENV_DIR"
 export CUDA_HOME="$CUDA_PATH"
 
 # activate env
-bash --init-file <(echo "source \"$CONDA_ROOT_PREFIX/etc/profile.d/conda.sh\" && conda activate \"$INSTALL_ENV_DIR\"")
+bash --init-file <(echo "pip install --upgrade tts")
